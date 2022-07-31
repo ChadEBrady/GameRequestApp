@@ -26,7 +26,7 @@ struct GameRow: View {
 
 struct GameRow_Previews: PreviewProvider {
     static var previews: some View {
-        let game = Game(id: 1, name: "Game 1")
+        let game = Game.mockGame()
         GameRow(
             game: game,
             inCart: true)

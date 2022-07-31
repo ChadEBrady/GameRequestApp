@@ -11,7 +11,7 @@ import XCTest
 class SearchViewModelTests: XCTestCase {
 
     func testAddAndRemoveFromCart() {
-        let game = Game(id: 0, name: "Test")
+        let game = Game.mockGame()
         let searchViewModel = SearchViewModel()
 
         searchViewModel.addRemoveGame(game)
@@ -21,8 +21,8 @@ class SearchViewModelTests: XCTestCase {
     }
 
     func testInCartIsTrue() {
-        let game = Game(id: 0, name: "Test")
-        let game2 = Game(id: 1, name: "Test 1")
+        let game = Game.mockGame()
+        let game2 = Game.mockGame(id: 2)
         let searchViewModel = SearchViewModel()
 
         searchViewModel.addRemoveGame(game)
@@ -31,8 +31,8 @@ class SearchViewModelTests: XCTestCase {
     }
 
     func testGameNotInCart() {
-        let game = Game(id: 0, name: "Test")
-        let game2 = Game(id: 1, name: "Test 1")
+        let game = Game.mockGame()
+        let game2 = Game.mockGame(id: 2)
         let searchViewModel = SearchViewModel()
 
         searchViewModel.addRemoveGame(game)

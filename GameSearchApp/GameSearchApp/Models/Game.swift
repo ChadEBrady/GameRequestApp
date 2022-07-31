@@ -8,9 +8,27 @@
 import Foundation
 
 struct Game: Codable,
-             Identifiable,
-             Equatable
+             Identifiable
 {
     let id: Int
+    let image: GameImage
     let name: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case image
+        case name
+    }
+}
+
+extension Game: Equatable {
+    static func == (lhs: Game, rhs: Game) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension Game {
+    static func mockGame(id: Int = 1) -> Game {
+        Game(id: id, image: GameImage.mockGameImage(), name: "Stray")
+    }
 }

@@ -1,5 +1,5 @@
 //
-//  GameSearchAppApp.swift
+//  GameSearchApp.swift
 //  GameSearchApp
 //
 //  Created by Chad Brady on 7/30/22.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct GameSearchAppApp: App {
+struct GameSearchApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView(viewModel: SearchViewModel())

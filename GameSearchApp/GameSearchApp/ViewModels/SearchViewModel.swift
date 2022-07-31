@@ -27,13 +27,19 @@ class SearchViewModel: ObservableObject {
     // MARK: - Mock Helpers
     func mockGames() {
         games = (1...10).map { index in
-            return Game(id: index, name: "Game \(index)")
+            return Game(
+                id: index,
+                image: GameImage.mockGameImage(),
+                name: "Game \(index)")
         }
     }
 
     func mockCart() {
         cart = (2...5).map { index in
-            return Game(id: index, name: "Game \(index)")
+            return Game(
+                id: index,
+                image: GameImage.mockGameImage(),
+                name: "Game \(index)")
         }
     }
 }
