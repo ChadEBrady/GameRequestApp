@@ -24,6 +24,8 @@
 		65C4B6D028961E3D00F37C70 /* GameSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B6CF28961E3D00F37C70 /* GameSearchResult.swift */; };
 		65C4B6D228961E6A00F37C70 /* GameImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B6D128961E6A00F37C70 /* GameImage.swift */; };
 		65C4B6D42896207B00F37C70 /* APIRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B6D32896207B00F37C70 /* APIRequestTests.swift */; };
+		65C4B6D72896227400F37C70 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B6D62896227400F37C70 /* URLProtocolStub.swift */; };
+		65C4B6D9289622A800F37C70 /* APIRequestStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B6D8289622A800F37C70 /* APIRequestStub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		65C4B6CF28961E3D00F37C70 /* GameSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSearchResult.swift; sourceTree = "<group>"; };
 		65C4B6D128961E6A00F37C70 /* GameImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameImage.swift; sourceTree = "<group>"; };
 		65C4B6D32896207B00F37C70 /* APIRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestTests.swift; sourceTree = "<group>"; };
+		65C4B6D62896227400F37C70 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		65C4B6D8289622A800F37C70 /* APIRequestStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestStub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 		65C4B6992896020700F37C70 /* GameSearchAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				65C4B6D52896224A00F37C70 /* Helpers */,
 				65C4B6D32896207B00F37C70 /* APIRequestTests.swift */,
 				65C4B6CA2896190100F37C70 /* SearchViewModelTests.swift */,
 			);
@@ -179,6 +184,15 @@
 				65C4B6CD28961DE300F37C70 /* APIRequest.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		65C4B6D52896224A00F37C70 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				65C4B6D8289622A800F37C70 /* APIRequestStub.swift */,
+				65C4B6D62896227400F37C70 /* URLProtocolStub.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C4B6D9289622A800F37C70 /* APIRequestStub.swift in Sources */,
 				65C4B6D42896207B00F37C70 /* APIRequestTests.swift in Sources */,
+				65C4B6D72896227400F37C70 /* URLProtocolStub.swift in Sources */,
 				65C4B6CB2896190100F37C70 /* SearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
