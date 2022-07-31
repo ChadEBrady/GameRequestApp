@@ -26,8 +26,28 @@ struct SearchView: View {
                                 viewModel.addRemoveGame(game)
                             }
                     }
+
+                    if
+                        viewModel.games.count > 0,
+                        !viewModel.lastPage
+                    {
+                        HStack {
+                            Spacer()
+                            Text(Strings.findMore)
+                            .padding(.padding8)
+                            .foregroundColor(Color.blue)
+                            Spacer()
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            viewModel.fetch(str: searchText, nextPage: true)
+                        }
+                    }
                 }
                 .searchable(text: $searchText)
+                .onSubmit(of: .search) {
+                    viewModel.fetch(str: searchText)
+                }
                 .navigationTitle(Strings.games)
                 .listStyle(.plain)
             }

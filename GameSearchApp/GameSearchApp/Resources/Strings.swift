@@ -9,6 +9,7 @@ import Foundation
 
 struct Strings {
     static let checkout = NSLocalizedString("Checkout", comment: "")
+    static let findMore = NSLocalizedString("FindMore", comment: "")
     static let games = NSLocalizedString("Games", comment: "")
     static let search = NSLocalizedString("Search", comment: "")
 }
