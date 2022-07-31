@@ -23,6 +23,8 @@ struct HomeView: View {
                 Label(Strings.checkout,
                       systemImage: "cart")
             }
+        }.onAppear {
+            viewModel.mockGames()
         }
     }
 }
@@ -31,6 +33,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = SearchViewModel()
         viewModel.mockGames()
+        viewModel.mockCart()
 
         return HomeView(viewModel: viewModel)
     }

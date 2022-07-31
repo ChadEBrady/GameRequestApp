@@ -17,7 +17,14 @@ struct SearchView: View {
             VStack {
                 List {
                     ForEach(viewModel.games) { game in
-                        Text(game.name)
+                        HStack {
+                            GameRow(
+                                game: game,
+                                inCart: viewModel.inCart(game))
+                        }.contentShape(Rectangle())
+                            .onTapGesture {
+                                viewModel.addRemoveGame(game)
+                            }
                     }
                 }
                 .searchable(text: $searchText)
@@ -32,6 +39,7 @@ struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = SearchViewModel()
         viewModel.mockGames()
+        viewModel.mockCart()
 
         return SearchView(viewModel: viewModel)
     }
