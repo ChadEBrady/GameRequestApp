@@ -23,8 +23,6 @@ struct HomeView: View {
                 Label(Strings.checkout,
                       systemImage: "cart")
             }
-        }.onAppear {
-            viewModel.mockGames()
         }
     }
 }

@@ -8,7 +8,8 @@
 import Foundation
 
 struct Game: Codable,
-             Identifiable
+             Identifiable,
+             Equatable
 {
     let id: Int
     let name: String
