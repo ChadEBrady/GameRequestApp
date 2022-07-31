@@ -55,15 +55,7 @@ class SearchViewModel: ObservableObject {
 
         apiRequest.request(from: url)
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { result in
-                switch result {
-                case .failure(let error):
-                    print("error \(error)")
-                case .finished:
-                    print("finished")
-                }
-
-            }) { [weak self] result in
+            .sink(receiveCompletion: { _ in }) { [weak self] result in
                 guard let self = self else { return }
                 if isNextPage {
                     self.games.append(contentsOf: result.results)

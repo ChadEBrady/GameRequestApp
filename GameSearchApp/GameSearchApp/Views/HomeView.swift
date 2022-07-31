@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
 
-    var viewModel: SearchViewModel
+    @StateObject var viewModel: SearchViewModel
 
     var body: some View {
         TabView {
@@ -18,11 +18,11 @@ struct HomeView: View {
                 Label(Strings.search,
                       systemImage: "magnifyingglass")
             }
-            CheckoutView()
+            CheckoutView(viewModel: viewModel)
             .tabItem {
                 Label(Strings.checkout,
                       systemImage: "cart")
-            }
+            }.badge(viewModel.cart.count)
         }
     }
 }
