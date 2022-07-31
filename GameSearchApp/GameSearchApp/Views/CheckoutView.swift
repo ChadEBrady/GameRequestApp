@@ -17,13 +17,20 @@ struct CheckoutView: View {
                 List {
                     ForEach(viewModel.cart) { game in
                         HStack {
-                        GameRow(
-                            game: game,
-                            inCart: viewModel.inCart(game))
-                        }.contentShape(Rectangle())
-                            .onTapGesture {
+                            GameRow(game: game)
+                            Spacer()
+                            Button(action: {
                                 viewModel.addRemoveGame(game)
-                            }
+                            }, label: {
+                                let imageName = viewModel.inCart(game) ? "cart.badge.minus" : "cart.badge.plus"
+                                Image(systemName: imageName).imageScale(.large)
+                            })
+                            .buttonStyle(.plain)
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                                
+                        }
                     }
                 }
                 .navigationTitle(Strings.checkout)

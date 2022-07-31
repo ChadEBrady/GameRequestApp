@@ -17,14 +17,19 @@ struct SearchView: View {
             VStack {
                 List {
                     ForEach(viewModel.games) { game in
-                        HStack {
-                            GameRow(
-                                game: game,
-                                inCart: viewModel.inCart(game))
-                        }.contentShape(Rectangle())
-                            .onTapGesture {
-                                viewModel.addRemoveGame(game)
+                        NavigationLink(destination: DetailView(game: game)) {
+                            HStack {
+                                GameRow(game: game)
+                                Spacer()
+                                Button(action: {
+                                    viewModel.addRemoveGame(game)
+                                }, label: {
+                                    let imageName = viewModel.inCart(game) ? "cart.badge.minus" : "cart.badge.plus"
+                                    Image(systemName: imageName).imageScale(.large).padding(.padding8)
+                                })
+                                .buttonStyle(.plain)
                             }
+                        }
                     }
 
                     if

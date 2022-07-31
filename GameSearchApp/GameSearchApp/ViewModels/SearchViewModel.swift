@@ -72,7 +72,8 @@ class SearchViewModel: ObservableObject {
             return Game(
                 id: index,
                 image: GameImage.mockGameImage(),
-                name: "Game \(index)")
+                name: "Game \(index)",
+                deck: "Some Words")
         }
     }
 
@@ -81,7 +82,8 @@ class SearchViewModel: ObservableObject {
             return Game(
                 id: index,
                 image: GameImage.mockGameImage(),
-                name: "Game \(index)")
+                name: "Game \(index)",
+                deck: "Some Words")
         }
     }
 }
