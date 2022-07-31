@@ -9,9 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
 
+    var viewModel: SearchViewModel
+
     var body: some View {
         TabView {
-            SearchView()
+            SearchView(viewModel: viewModel)
             .tabItem {
                 Label(Strings.search,
                       systemImage: "magnifyingglass")
@@ -27,6 +29,9 @@ struct HomeView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        let viewModel = SearchViewModel()
+        viewModel.mockGames()
+
+        return HomeView(viewModel: viewModel)
     }
 }
